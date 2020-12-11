@@ -11,6 +11,8 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
 
+import java.util.Scanner; // I know we're going to need a scanner or a scanner equivalent thats what im looking for
+
 public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
