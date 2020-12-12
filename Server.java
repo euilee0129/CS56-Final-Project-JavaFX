@@ -7,7 +7,11 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class EchoServer {
+/*
+ * Project made and worked on by Samuel Eui Ho Lee and Janet Sujung Cho.
+ */
+
+public class Server {
 
 	public static void main(String[] args) {
 		
@@ -24,15 +28,13 @@ public class EchoServer {
 			
 			String line;
 			while ((line = in.readLine()) != null) {
-				System.out.println("received: " + line);
-				
-				out.println("echo: " + line);
+				//
 			}
 			
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
-		System.out.println("server terminating...");
+		System.out.println("server terminated");
 
 	}
 

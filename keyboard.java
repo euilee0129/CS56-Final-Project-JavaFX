@@ -1,5 +1,12 @@
 package application;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.util.Scanner;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -12,11 +19,29 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
 
+/*
+ * Project made and worked on by Samuel Eui Ho Lee and Janet Sujung Cho.
+ */
 
 public class Main extends Application {
 
 	public static void main(String[] args) {
-		launch(args);
+
+		// Java FX client something
+		try (Socket socket = new Socket("localhost", 8080); Scanner scanner = new Scanner(System.in)) {
+
+			// in & out
+			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+
+			/// ----------
+			launch(args);
+			// ------
+
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+
 	}
 
 	@Override
@@ -36,10 +61,10 @@ public class Main extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println(" C ");
+				Box.display(btn.getText());
 
 			}
-		});
+		}); // e ->
 
 		/** black button 1 **/
 
@@ -57,7 +82,7 @@ public class Main extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println(" C# ");
+				Box.display(blk1.getText());
 
 			}
 		});
@@ -76,7 +101,7 @@ public class Main extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println(" D ");
+				Box.display(btn2.getText());
 
 			}
 		});
@@ -97,7 +122,7 @@ public class Main extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println(" D# ");
+				Box.display(blk2.getText());
 
 			}
 		});
@@ -116,7 +141,7 @@ public class Main extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println(" E ");
+				Box.display(btn3.getText());
 
 			}
 		});
@@ -135,7 +160,8 @@ public class Main extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println(" F ");
+				Box.display(btn4.getText());
+				;
 
 			}
 		});
@@ -156,7 +182,7 @@ public class Main extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println(" F# ");
+				Box.display(blk3.getText());
 
 			}
 		});
@@ -175,7 +201,7 @@ public class Main extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println(" G ");
+				Box.display(btn5.getText());
 
 			}
 		});
@@ -196,8 +222,7 @@ public class Main extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println(" G# ");
-
+				Box.display(blk4.getText());
 			}
 		});
 
@@ -215,7 +240,7 @@ public class Main extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println(" A ");
+				Box.display(btn6.getText());
 
 			}
 		});
@@ -236,7 +261,7 @@ public class Main extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println(" A# ");
+				Box.display(blk5.getText());
 
 			}
 		});
@@ -255,7 +280,7 @@ public class Main extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println(" B ");
+				Box.display(btn7.getText());
 
 			}
 		});

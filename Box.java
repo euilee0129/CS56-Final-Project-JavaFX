@@ -13,6 +13,10 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+/*
+ * Project made and worked on by Samuel Eui Ho Lee and Janet Sujung Cho.
+ */
+
 public class Box extends Main {
 
 	public static void display(String str) {
