@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.scene.text.Font;
 
 /*
  * Project made and worked on by Samuel Eui Ho Lee and Janet Sujung Cho.
@@ -23,46 +24,67 @@ public class Box extends Main {
 		Stage window = new Stage();
 
 		Label label = new Label("");
-		label.setAlignment(Pos.TOP_CENTER);
 
 		// keyboard output
 		switch (str) {
 		case "C":
-			label = new Label("C");
+			label = new Label("This is the C key.");
+			label.setFont(new Font("Comic Sans", 20));
+			break;
 			
-			break;
 		case "C#":
-			label = new Label("C#");
+			label = new Label("This is the C# key.");
+			label.setFont(new Font("Comic Sans", 20));
 			break;
+			
 		case "D":
-			label = new Label("D");
+			label = new Label("This is the D key.");
+			label.setFont(new Font("Comic Sans", 20));
 			break;
+			
 		case "D#":
-			label = new Label("D#");
+			label = new Label("This is the D# key.");
+			label.setFont(new Font("Comic Sans", 20));
 			break;
+			
 		case "E":
-			label = new Label("E");
+			label = new Label("This is the E key.");
+			label.setFont(new Font("Comic Sans", 20));
 			break;
+			
 		case "F":
-			label = new Label("F");
+			label = new Label("This is the F key.");
+			label.setFont(new Font("Comic Sans", 20));
 			break;
+			
 		case "F#":
-			label = new Label("F#");
+			label = new Label("This is the F# key.");
+			label.setFont(new Font("Comic Sans", 20));
 			break;
+			
 		case "G":
-			label = new Label("G");
+			label = new Label("This is the G key.");
+			label.setFont(new Font("Comic Sans", 20));
 			break;
+			
 		case "G#":
-			label = new Label("G#");
+			label = new Label("This is the G# key.");
+			label.setFont(new Font("Comic Sans", 20));
 			break;
+			
 		case "A":
-			label = new Label("A");
+			label = new Label("This is the A key.");
+			label.setFont(new Font("Comic Sans", 20));
 			break;
+			
 		case "A#":
-			label = new Label("A#");
+			label = new Label("This is the A# key.");
+			label.setFont(new Font("Comic Sans", 20));
 			break;
+			
 		case "B":
-			label = new Label("B");
+			label = new Label("This is the B key.");
+			label.setFont(new Font("Comic Sans", 20));
 			break;
 		}
 		
@@ -71,10 +93,9 @@ public class Box extends Main {
 
 		Button btn = new Button();
 		btn.setText("send to console");
-		btn.setAlignment(Pos.BOTTOM_RIGHT);
-		btn.setMaxSize(100, 50);
+		btn.setWrapText(true);
 		btn.setTranslateX(90);
-		btn.setTranslateY(70);
+		btn.setTranslateY(100);
 
 		btn.setOnAction(e -> {
 			System.out.println("Received from Box : "+ str );

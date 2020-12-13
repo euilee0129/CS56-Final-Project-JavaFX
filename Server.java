@@ -1,41 +1,110 @@
 package application;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.ServerSocket;
-import java.net.Socket;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.scene.text.Font;
 
 /*
  * Project made and worked on by Samuel Eui Ho Lee and Janet Sujung Cho.
  */
 
-public class Server {
+public class Box extends Main {
 
-	public static void main(String[] args) {
-		
-		try (ServerSocket server = new ServerSocket(8080)) {
+	public static void display(String str) {
+		Stage window = new Stage();
+
+		Label label = new Label("");
+
+		// keyboard output
+		switch (str) {
+		case "C":
+			label = new Label("This is the C key.");
+			label.setFont(new Font("Comic Sans", 20));
+			break;
 			
-			System.out.println("server started, waiting for connection...");
-			Socket socket = server.accept();
+		case "C#":
+			label = new Label("This is the C# key.");
+			label.setFont(new Font("Comic Sans", 20));
+			break;
 			
-			// in & out
-			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+		case "D":
+			label = new Label("This is the D key.");
+			label.setFont(new Font("Comic Sans", 20));
+			break;
 			
-			System.out.println("connection established, listening...");
+		case "D#":
+			label = new Label("This is the D# key.");
+			label.setFont(new Font("Comic Sans", 20));
+			break;
 			
-			String line;
-			while ((line = in.readLine()) != null) {
-				//
-			}
+		case "E":
+			label = new Label("This is the E key.");
+			label.setFont(new Font("Comic Sans", 20));
+			break;
 			
-		} catch (IOException ex) {
-			ex.printStackTrace();
+		case "F":
+			label = new Label("This is the F key.");
+			label.setFont(new Font("Comic Sans", 20));
+			break;
+			
+		case "F#":
+			label = new Label("This is the F# key.");
+			label.setFont(new Font("Comic Sans", 20));
+			break;
+			
+		case "G":
+			label = new Label("This is the G key.");
+			label.setFont(new Font("Comic Sans", 20));
+			break;
+			
+		case "G#":
+			label = new Label("This is the G# key.");
+			label.setFont(new Font("Comic Sans", 20));
+			break;
+			
+		case "A":
+			label = new Label("This is the A key.");
+			label.setFont(new Font("Comic Sans", 20));
+			break;
+			
+		case "A#":
+			label = new Label("This is the A# key.");
+			label.setFont(new Font("Comic Sans", 20));
+			break;
+			
+		case "B":
+			label = new Label("This is the B key.");
+			label.setFont(new Font("Comic Sans", 20));
+			break;
 		}
-		System.out.println("server terminated");
+		
+		
+		/* button 1 */
 
+		Button btn = new Button();
+		btn.setText("send to console");
+		btn.setWrapText(true);
+		btn.setTranslateX(90);
+		btn.setTranslateY(100);
+
+		btn.setOnAction(e -> {
+			System.out.println("Received from Box : "+ str );
+			// add close program button
+			
+		});
+
+		
+
+		StackPane root = new StackPane();
+		Scene scene = new Scene(root, 300, 250);
+
+		root.getChildren().add(btn);
+		root.getChildren().add(label);
+
+		window.setScene(scene);
+		window.show();
 	}
-
 }
